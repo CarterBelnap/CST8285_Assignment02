@@ -1,5 +1,5 @@
 <?php
-include 'config.php'; // Include the database configuration file
+include '../config.php'; // Include the database configuration file
 
 // If the form was submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -8,11 +8,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email']; // stores email from form into variable
     $password = $_POST['password']; // stores password from form into variable
     
-    // Validate inputs (server-side validation)
-    if (empty($username) || empty($email) || empty($password)) { // server side validation to make sure fields are non empty
-        die("Please fill in all fields.");
-    }
-
     // Check if username or email already exists
     $checkStmt = $connection->prepare("SELECT id FROM Users WHERE username = ? OR email = ?"); //query the username and email the user input against the database
     $checkStmt->bind_param("ss", $username, $email); // bind the username and email the userer input into the 2 ? in above statement
@@ -35,9 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("sss", $username, $email, $hashed_password);
     
     // Execute the statement and check if the insertion was successful
-    if ($stmt->execute()) {
-        echo "Registration successful!";
-    } else {
+    if (!$stmt->execute()) {
         echo "Error: " . $stmt->error;
     }
     
