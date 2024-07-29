@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'config.php'; // Include the database configuration file
+include '../config.php'; // Include the database configuration file
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve form data
