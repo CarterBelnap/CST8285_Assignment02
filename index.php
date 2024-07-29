@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/Index.css">
+    <link rel="stylesheet" href="/CSS/Index.css">
     <title>Home Page</title>
 </head>
 <body>
-    <p>This is the homepage of the website</p>
+    <p>Crafting Play</p>
+    <div id="game-ideas">
+        <?php include("List_Ideas"); ?>
+    </div>
 </body>
 </html>
