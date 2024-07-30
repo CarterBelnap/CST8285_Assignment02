@@ -9,8 +9,8 @@
 <body>
     <p>Crafting Play</p>
     <div id="game-ideas">
-        <a href="./PHP/Sign-Up/Register-Page.html">Register</a>
-        <a href="./PHP/Login/Login-Page.html">Login</a>
+        <a href="../Pages/Register-Page.html">Register</a>
+        <a href="../Pages/Login-Page.html">Login</a>
     </div>
 </body>
 </html>
