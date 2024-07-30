@@ -7,10 +7,14 @@
     <title>Home Page</title>
 </head>
 <body>
-    <p>Crafting Play</p>
-    <div id="game-ideas">
-        <a href="./PHP/Sign-Up/Register-Page.html">Register</a>
-        <a href="./PHP/Login/Login-Page.html">Login</a>
-    </div>
+    <!-- Header for non-logged-in users -->
+    <header class="header" id="signed-out">
+        <div class="navbar">
+            <div class="logo">Crafting Play</div>
+            <a href="./PHP/Sign-Up/Register-Page.html">Register</a>
+            <a href="./PHP/Login/Login-Page.html">Login</>
+            </div>
+        </div>
+    </header>
 </body>
 </html>
