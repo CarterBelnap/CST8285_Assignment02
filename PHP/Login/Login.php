@@ -7,12 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     
-    // Validate inputs (server-side validation)
-    if (empty($username) || empty($password)) {
-        die("Please fill in all fields.");
-    }
-
-    // Prepare an SQL statement to prevent SQL injection
+     // Prepare an SQL statement to prevent SQL injection
     $stmt = $connection->prepare("SELECT id, password FROM Users WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
@@ -28,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Password is correct, start a new session
             $_SESSION['user_id'] = $user_id;
             $_SESSION['username'] = $username;
-            echo "Login successful!"; // Redirect or send to a logged-in page
+            header("Location: ../../index.php");
         } else {
             echo "Incorrect password. Please try again.";
         }
