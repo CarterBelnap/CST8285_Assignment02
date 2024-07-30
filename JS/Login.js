@@ -8,7 +8,7 @@
 //select the sign up button and have it trigger the validate method
 const registrationForm = document.forms[0];
 let isValid = true;
-document.getElementById("register-button").addEventListener("click", validate);
+document.getElementById("login-button").addEventListener("click", validate);
 
 //elements for login
 const login = document.getElementById("username");

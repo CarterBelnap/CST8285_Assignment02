@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $checkStmt->store_result(); // store the result of the query
 
     if ($checkStmt->num_rows > 0) { // check if the above query had any results, if so it is a duplicate
-        echo "Username or email already exists. Please choose another.";
+        header("Location: ./Register-Page.html");
         $checkStmt->close();
         $connection->close();
         exit();
@@ -30,9 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("sss", $username, $email, $hashed_password);
     
     // Execute the statement and check if the insertion was successful
-    if (!$stmt->execute()) {
-        echo "Error: " . $stmt->error;
+    if ($stmt->execute()) {
+        header("Location: ../Login/Login-Page.html");
     }
+    else {
+        echo "Error: " . $stmt->error;
+        }
     
     // Close the statement and connection
     $stmt->close();
