@@ -1,8 +1,26 @@
 /*  text color #e08866
     bg color  #281d2d
 */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #281d2d;
+  color: #e08866;
+}
 
-body{
-    background-color: #281d2d;
-    color: #e08866;
+.header {
+  background-color: #412f49;
+  border-radius: 15px;
+  border-color: #e08866;
+  font-size: x-large;
+  padding: 10px 0;
+  margin: 15px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.navbar {
+  display: inline;
+  padding: 10px 0;
+  margin: 15px;
 }
