@@ -10,10 +10,10 @@
     <!-- Header for non-logged-in users -->
     <header class="header" id="signed-out">
         <div class="navbar">
-            <img src="./logoimg.jpg" alt="GameDrive Logo">
+            <button><img src="./logoimg.jpg" href="./index.php" alt="GameDrive Logo" width="50px" height="50px"></button>
             <h1>GameDrive</h1>
-            <a href="./PHP/Sign-Up/Register-Page.html">Register</a>
-            <a href="./PHP/Login/Login-Page.html">Login</b>
+            <a href="./Pages/Register-Page.html">Register</a>
+            <a href="./Pages/Login-Page.html">Login</b>
             </div>
         </div>
     </header>
