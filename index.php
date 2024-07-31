@@ -10,9 +10,10 @@
     <!-- Header for non-logged-in users -->
     <header class="header" id="signed-out">
         <div class="navbar">
-            <div class="logo">Crafting Play</div>
+            <img src="./logoimg.jpg" alt="GameDrive Logo">
+            <h1>GameDrive</h1>
             <a href="./PHP/Sign-Up/Register-Page.html">Register</a>
-            <a href="./PHP/Login/Login-Page.html">Login</>
+            <a href="./PHP/Login/Login-Page.html">Login</b>
             </div>
         </div>
     </header>
