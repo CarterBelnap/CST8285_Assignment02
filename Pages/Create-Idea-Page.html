@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/General-Styling.css" />
+    <link rel="stylesheet" href="../CSS/Create-Idea.css" />
+    <script defer src="../JS/Genres.js"></script>
+    <script defer src="../JS/Add-Section.js"></script>
+    <title>Create Idea</title>
+  </head>
+  <body>
+    <h1>Create Idea</h1>
+    <form method="post" action="../PHP/GameIdeas/Submit_Idea.php">
+      <div id="idea-top">
+        <input type="text" name="title" id="idea-title" placeholder="Title" />
+        <select name="genres" id="genres"></select>
+        <div id="selectedGenres"></div>
+        <input
+          type="text"
+          name="cover_image_url"
+          id="cover_image_url"
+          placeholder="cover image url"
+        />
+      </div>
+      <div name="sections" id="sections">
+        <div id="mandatory-section" class="idea-section">
+          <input
+            type="text"
+            class="section-title"
+            placeholder="Section Title"
+          />
+          <textarea name="section_text" class="section-body"></textarea>
+        </div>
+      </div>
+      <div id="form-buttons">
+        <button type="button" id="add-section">+</button>
+        <button type="submit" id="post-form">Post</button>
+        <button type="reset" id="cancel-form">Cancel</button>
+      </div>
+    </form>
+  </body>
+</html>

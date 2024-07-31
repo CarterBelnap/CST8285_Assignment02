@@ -8,13 +8,21 @@
 </head>
 <body>
     <!-- Header for non-logged-in users -->
-    <header class="header" id="signed-out">
+    <header class="header" id="signed-out active" >
         <div class="navbar">
             <button><img src="./logoimg.jpg" href="./index.php" alt="GameDrive Logo" width="50px" height="50px"></button>
             <h1>GameDrive</h1>
-            <a href="./Pages/Register-Page.html">Register</a>
-            <a href="./Pages/Login-Page.html">Login</b>
-            </div>
+            <a class="links" href="./Pages/Register-Page.html">Register</a>
+            <a class="links" href="./Pages/Login-Page.html">Login</a>    
+        </div>
+    </header>
+    <!-- Header for logged-in users -->
+    <header class="header" id="signed-in">
+        <div class="navbar">
+            <button><img src="./logoimg.jpg" href="./index.php" alt="GameDrive Logo" width="50px" height="50px"></button>
+            <h1>GameDrive</h1>
+            <a href="./Pages/Create-Idea-Page.html">Create Idea</a>
+            <a href="./Pages/Create-Idea-Page.html">My Ideas</a>
         </div>
     </header>
 </body>

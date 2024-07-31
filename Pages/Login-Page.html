@@ -10,20 +10,17 @@
 </head>
 <body>
     <form class="form" method="post" action="../PHP/Login/Login.php" id="login-page-form">
-        <fieldset>
-            <div>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username">
+        <div id="form-border">
+            <h1>Login</h1>
+            <div id="input">
+                <input type="text" name="username" id="username" placeholder="Username">
+                <input type="password" name="password" id="password" placeholder="Password">
             </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-            </div>
-            <div>
+            <div id="buttons">
                 <button type="submit" id="login-button">Login</button>
                 <a href="./Register-Page.html">Register</a>
             </div>
-        </fieldset>
+        </div>
     </form>
 </body>
 </html>
