@@ -6,21 +6,66 @@ body {
   font-family: Arial, sans-serif;
   background-color: #281d2d;
   color: #e08866;
+  cursor: default;
 }
 
 .header {
-  background-color: #412f49;
+  border: 1px solid #e08866c5;
+  background-color: #3e2c46;
   border-radius: 15px;
-  border-color: #e08866;
   font-size: x-large;
-  padding: 10px 0;
   margin: 15px;
-  border-radius: 15px;
-  text-align: center;
+  text-align: left;
 }
 
 .navbar {
-  display: inline;
+  display: flex;
+  align-items: center;
   padding: 10px 0;
   margin: 15px;
+}
+
+button {
+  margin-right: 15px;
+  color: #e08866;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: white;
+  font-size: 14pt;
+  font-size: large;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+a:hover {
+  border-radius: 15px;
+  text-decoration: underline;
+}
+
+.navbar h1 {
+  font-size: 30px;
+  margin-right: auto;
+}
+
+#signed-out {
+  display: none;
+}
+
+#signed-out.active {
+  display: block;
+}
+
+#signed-in {
+  display: none;
+}
+
+#signed-in.active {
+  display: block;
 }

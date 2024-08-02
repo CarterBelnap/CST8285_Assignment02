@@ -1,5 +1,5 @@
 <?php
-include 'config.php'; // Include the database configuration file
+include '../config.php'; // Include the database configuration file
 
 // Check if the form was submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $genres = $_POST['genres']; // String with comma-separated genre IDs
     $sections = $_POST['sections']; // Plain text
 
-    // Basic validation
+    // Basic validation remove after client side validation is implemented
     if (empty($title) || empty($coverImageUrl) || empty($genres) || empty($sections)) {
         die("All fields are required.");
     }

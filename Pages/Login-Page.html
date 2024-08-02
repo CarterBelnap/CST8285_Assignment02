@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/General-Styling.css">
-    <link rel="stylesheet" href="../CSS/Login.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/General-Styling.css" />
+    <link rel="stylesheet" href="../CSS/Login.css" />
     <script defer src="../JS/Login.js"></script>
     <title>Login</title>
-</head>
-<body>
-    <form class="form" method="post" action="../PHP/Login/Login.php" id="login-page-form">
-        <fieldset>
-            <div>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username">
-            </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-            </div>
-            <div>
-                <button type="submit" id="login-button">Login</button>
-                <a href="./Register-Page.html">Register</a>
-            </div>
-        </fieldset>
+  </head>
+  <body>
+    <form
+      class="form"
+      method="post"
+      action="../PHP/Login/Login.php"
+      id="login-page-form"
+    >
+      <div id="form-border">
+        <h1>Login</h1>
+        <div id="input">
+          <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+          />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Password"
+          />
+        </div>
+        <div id="buttons">
+          <button type="submit" id="login-button">Login</button>
+          <a href="./Register-Page.html">Register</a>
+        </div>
+      </div>
     </form>
-</body>
+  </body>
 </html>
