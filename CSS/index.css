@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.side-box {
+  width: 10%;
+  border: 1px solid #e08866c5;
+  background-color: #3e2c46;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+.content {
+  width: 80%;
+  border: 1px solid #e08866c5;
+  background-color: #3e2c46;
+  border-radius: 15px;
+  margin: 15px;
+}
+
+#searchbar {
+  margin: 30px;
+}
+
+#searchbarinput {
+  width: 500px;
+}
+
+.posts {
+  margin: 30px;
+}
+
+#search-button {
+  color: white;
+  font-size: 14pt;
+  font-size: large;
+  cursor: pointer;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+#search-button:hover {
+  text-decoration: underline;
+}

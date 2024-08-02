@@ -63,11 +63,6 @@ button {
   text-decoration: none;
   text-align: center;
 }
-
-button:hover {
-  background-color: #1f3a47;
-}
-
-button:hover {
-  background-color: #0f1a22;
+a {
+  margin-top: 100px;
 }
