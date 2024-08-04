@@ -1,0 +1,53 @@
+	/* Name: Ahmed Al-Zaher
+	File Name: Idea-List.css
+	Date: 08-04-2024
+	Purpose: CSS styling for idea listing. Home page and profile page */
+
+.idea-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+    border: 1px solid #e08866c5;
+    background-color: #3e2c46;
+    border-radius: 5px;
+}
+
+h2{
+    position: fixed;
+    margin-left: 10px;
+    text-decoration: underline;
+}
+
+.ideas{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 265px;
+    align-items: center;
+}
+
+.ideas h3{
+    text-align: center;
+    color: white;
+    font-size: smaller;
+    margin-top: -5px;
+    margin-bottom: 2px;
+    text-decoration: underline;
+
+}
+
+.ideas img{
+    border-radius: 15px;
+    width: auto;
+    height: auto;
+}
+
+.ideas p{
+    text-align: center;
+    font-size: small;
+}

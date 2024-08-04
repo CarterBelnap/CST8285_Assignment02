@@ -1,0 +1,124 @@
+#idea-form {
+	display: flex;
+	width: 80%;
+	margin: auto;
+	border: 1px solid white;
+	flex-direction: column;
+	background-color: #3e2c46;
+}
+
+#idea-title {
+	width: 95%;
+	height: 30px;
+	border-color: none;
+	font-size: 16pt;
+	margin-bottom: 10px;
+}
+
+#genres {
+	border-radius: 5px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+#selectedGenres {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+#selectedGenres span {
+	display: flex;
+	justify-content: space-between;
+	width: 100px;
+	height: 100%;
+	border: 1px solid #8d7f7f;
+	border-radius: 3px;
+	padding: 5px;
+	margin-right: 5px;
+	background-color: #14212a; /* Initial background color */
+	color: #f2ecec;
+	font-size: large;
+	transition: background-color 0.3s, color 0.3s;
+	cursor: pointer;
+	text-decoration: none;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+#selectedGenres span:hover {
+	background-color: #1f3a47;
+}
+
+#selectedGenres span:active {
+	background-color: #0f1a22;
+}
+
+input {
+	border-radius: 10px;
+	margin-left: 5px;
+}
+
+#cover_image_url {
+	width: 50%;
+	margin-bottom: 10px;
+}
+
+.idea-section{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: auto;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.section-title{
+    margin-left: 5px;
+    width: 95%;
+	height: 30px;
+	border-color: none;
+	font-size: 16pt;
+	margin-bottom: 20px;
+}
+
+.section-body{
+    width: 95%;
+    height: 200px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.section-url{
+    width: 50%;
+}
+
+#add-section{
+    width: 50px;
+    height: 50px;
+    font-size: 20pt;
+    text-align: center;
+
+    border: 1px solid #8d7f7f;
+	border-radius: 3px;
+	padding: 5px;
+	margin-right: 5px;
+	background-color: #14212a; /* Initial background color */
+	color: #f2ecec;
+    align-self: center;
+}
+
+button:hover{
+    background-color: #1f3a47;
+}
+
+#post-form, #cancel-form{
+    border: 1px solid #8d7f7f;
+	border-radius: 3px;
+	padding: 5px;
+	margin-right: 5px;
+	background-color: #14212a; /* Initial background color */
+	color: #f2ecec;
+    align-self: center;
+}
+
