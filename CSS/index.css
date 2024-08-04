@@ -43,9 +43,3 @@
 #search-button:hover {
   text-decoration: underline;
 }
-
-.posts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Space between items */
-}
