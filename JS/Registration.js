@@ -5,10 +5,10 @@
 	Purpose: Form Validation Functionality for registration
 */
 
-//select the sign up button and have it trigger the validate method
+
 const registrationForm = document.forms[0];
 let isValid = true;
-document.getElementById("register-button").addEventListener("click", validate);
+document.getElementById("register_button").addEventListener("click", validate);
 
 //elements for email
 const email = document.getElementById("email"); //selects the email input tag from the html sheet
@@ -51,6 +51,5 @@ function validate(event) {
     }
     else{
         login.value = login.value.toLowerCase();
-        alert("Registration Complete!");
     }
 }

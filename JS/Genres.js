@@ -1,4 +1,4 @@
-var genres = ["Genres", "Action", "Adventure", "Horror", "Puzzle", "2D", "3D", "Platformer", 
+var genres = ["Action", "Adventure", "Horror", "Puzzle", "2D", "3D", "Platformer", 
     "Roguelike", "RPG", "Simulation", "Comedy", "Rhythm", "Multiplayer", 
     "Story", "Shooter", "Card", "Board", "Party"];
     
@@ -20,7 +20,7 @@ window.onload = populateGenres;
 // Event listener for dropdown selection
 function genreSelection() {
     var selectedGenre = genreSelect.value;
-    if (selectedGenre && selectedGenre !== "Genres") {
+    if (selectedGenre) {
         addGenre(selectedGenre);
         removeOptionFromDropdown(selectedGenre);
     }
@@ -31,7 +31,7 @@ genreSelect.addEventListener("change", genreSelection);
 function addGenre(selectedGenre) {
     var selectedGenresDiv = document.getElementById("selectedGenres");
     var listedGenre = document.createElement("span");
-    listedGenre.className = "selected-genre";
+    listedGenre.className = "selected_genre";
     listedGenre.textContent = selectedGenre;
 
     // Add click event listener to the span to remove the genre

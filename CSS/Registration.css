@@ -1,0 +1,95 @@
+/*
+	Name: Ahmed Al-Zaher
+	File Name: Registration.css
+	Date: 08-04-2024
+	Purpose: Css styling for the registration page.
+*/
+.form {
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    font-size: 16pt;
+}
+
+#register_form {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 10%;
+    border: 1px solid #e08866c5;
+    background-color: #3e2c46;
+    border-radius: 30px;
+    padding: 5px;
+    width: 30%;
+    align-items: center;
+}
+
+h1 {
+    margin: auto;
+    margin-bottom: 25px;
+    margin-top: 30px;
+}
+
+#registration_input {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+}
+
+input {
+    height: 30px;
+    width: 95%;
+    font-size: 14pt;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+button, #return {
+    border: 1px solid #8d7f7f;
+    padding: 5px;
+    margin-right: 5px;
+    background-color: #14212a; /* Initial background color */
+    color: #f2ecec;
+    font-size: large;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+button{
+    width: 100px;
+    height: 100%;
+    border-radius: 3px;
+}
+
+#return{
+    width: 25px;
+    height: 20px;
+    border-radius: 50pt;
+}
+
+#pos{
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: nowrap;
+    height: 50px;
+    width: 50px;
+    margin-left: 63%;
+    margin-top: 8%;
+    position: fixed;
+}
+
+@media only screen and (max-width: 800px) {
+    h1{
+        font-size: larger;
+    }
+    #register_buttons{
+        display: flex;
+        flex-direction: row;
+    }
+    button{
+        font-size: small;
+        width: 50%;
+        margin-left: 1px;
+        height: 50%;
+    }
+}

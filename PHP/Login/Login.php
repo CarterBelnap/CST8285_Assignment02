@@ -1,3 +1,10 @@
+<!-- 
+	Name: Ahmed Al-Zaher
+	File Name: Login.php
+	Date: 08-04-2024
+	Purpose: PHP for the Login page of the website. -->
+
+
 <?php
 session_start();
 include '../config.php'; // Include the database configuration file
@@ -8,15 +15,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     
      // Prepare an SQL statement to prevent SQL injection
-    $stmt = $connection->prepare("SELECT id, password FROM Users WHERE username = ?");
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $stmt->store_result();
+    $checkDuplicate = $connection->prepare("SELECT id, password FROM Users WHERE username = ?");
+    $checkDuplicate->bind_param("s", $username);
+    $checkDuplicate->execute();
+    $checkDuplicate->store_result();
 
     // Check if a user with the provided username exists
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($user_id, $hashed_password);
-        $stmt->fetch();
+    if ($checkDuplicate->num_rows > 0) {
+        $checkDuplicate->bind_result($user_id, $hashed_password);
+        $checkDuplicate->fetch();
 
         // Verify the password
         if (password_verify($password, $hashed_password)) {
@@ -25,13 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['username'] = $username;
             header("Location: ../../index.php");
         } else {
-            echo "Incorrect password. Please try again.";
+            $errorMessage = "Incorrect password. Please try again.";
+            header("Location: ../../Pages/Login_Page.php?error=" . urlencode($errorMessage));
         }
     } else {
-        echo "No user found with that username.";
+        $errorMessage = "No user found with that username.";
+        header("Location: ../../Pages/Login_Page.php?error=" . urlencode($errorMessage));
     }
 
     // Close the statement and connection
-    $stmt->close();
+    $checkDuplicate->close();
     $connection->close();
 }

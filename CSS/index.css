@@ -3,7 +3,7 @@
   min-height: 100vh;
 }
 
-.side-box {
+.side_box {
   width: 10%;
   border: 1px solid #e08866c5;
   background-color: #3e2c46;
@@ -31,7 +31,7 @@
   margin: 30px;
 }
 
-#search-button {
+#search_button {
   color: white;
   font-size: 14pt;
   font-size: large;
@@ -40,6 +40,6 @@
   margin-right: 5px;
 }
 
-#search-button:hover {
+#search_button:hover {
   text-decoration: underline;
 }
