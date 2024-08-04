@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS\General-Styling.css">
     <link rel="stylesheet" href="CSS\index.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../JS/Search.js"></script>
     <title>Home Page</title>
 </head>
 <body>
     <!-- Header for non-logged-in users -->
     <header class="header" id="signed-out active" >
         <div class="navbar">
-            <button><img src="./logoimg.jpg" href="./index.php" alt="Joystick Logo" width="50px" height="50px"></button>
+            <button><img src="./logoimg.jpg" onClick="window.location.reload();" alt="Joystick Logo" width="50px" height="50px"></button>
             <h1>JOYSTICK</h1>
             <a class="links" href="./Pages/Register-Page.html">Register</a>
             <a class="links" href="./Pages/Login-Page.html">Login</a>    
@@ -31,13 +33,14 @@
         <div class="content">
             <div id="searchbar"> 
                 <p> Search for an idea...</p>   
-                <form action="search.php" method="GET">
-                    <input type="text" name="query" placeholder="Search...">
+                <form id="searchForm">
+                    <input type="text" name="query" placeholder="Search..." id="searchInput">
                     <button type="submit" id="search-button">Search</button>
                 </form>
             </div>
             <div class="posts">
-                <form include="../PHP/GameIdeas/View_Idea.php">
+                <form id="ListIdeas">
+                    <?php include './PHP/GameIdeas/List_Ideas.php'; ?>
                 </form>
             </div>
         <div class="side-box right-box"></div>
