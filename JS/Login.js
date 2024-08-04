@@ -7,7 +7,7 @@
 
 const registrationForm = document.forms[0];
 let isValid = true;
-document.getElementById("login-button").addEventListener("click", validate);
+document.getElementById("login_button").addEventListener("click", validate);
 
 //elements for login
 const login = document.getElementById("username");

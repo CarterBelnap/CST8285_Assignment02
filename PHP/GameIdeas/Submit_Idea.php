@@ -5,7 +5,7 @@ include '../config.php'; // Include the database configuration file
 // Check if the user is signed in
 if (!isset($_SESSION['user_id'])) {
     // Redirect to sign-in page if the user is not signed in
-    header("Location: ../../Pages/Login-Page.html");
+    header("Location: ../../Pages/Login_Page.php");
     exit();
 }
 

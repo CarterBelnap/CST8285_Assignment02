@@ -8,9 +8,9 @@
 
 const Form = document.forms[0];
 let isValid = true;
-document.getElementById("post-form").addEventListener("click", validate);
+document.getElementById("post_form").addEventListener("click", validate);
 
-const iTitle = document.getElementById("idea-title"); 
+const iTitle = document.getElementById("idea_title"); 
 const selectedGenresDiv  = document.getElementById("selectedGenres");
 const coverImageURL = document.getElementById("cover_image_url");
 
@@ -34,10 +34,10 @@ function validate(event) {
         errorMessage += "Please select at least one genre.\n";
     }
     
-    const sections = document.querySelectorAll('.idea-section');
+    const sections = document.querySelectorAll('.idea_section');
     sections.forEach((section) => {
-        const sectionTitle = section.querySelector('.section-title');
-        const sectionBody = section.querySelector('.section-body');
+        const sectionTitle = section.querySelector('.section_title');
+        const sectionBody = section.querySelector('.section_body');
         if (sectionTitle.value == "") {
             isValid = false;
             errorMessage += `Section title must not be empty.\n`;
