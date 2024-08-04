@@ -28,7 +28,7 @@ if (mysqli_num_rows($result) > 0) {
         echo "</div>";
     }
 } else {
-    echo "<p>No game ideas found.</p>";
+    echo "<p>You don't have any ideas yet.</p>";
 }
 
 mysqli_close($connection);

@@ -15,6 +15,9 @@
     <title>Registration</title>
 </head>
 <body>
+    <div id="pos">
+        <a href="../index.php" id="return">X</a>
+    </div>
     <form class="form" method="post" action="../PHP/Sign-Up/Registration.php" id="registration-form">
         <div id="register-form">
             <h1>Register</h1>
