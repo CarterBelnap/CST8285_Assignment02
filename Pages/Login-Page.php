@@ -1,3 +1,10 @@
+<!-- 
+	Name: Ahmed Al-Zaher
+	File Name: Login-Page.html
+	Date: 08-04-2024
+	Purpose: HTML for the Login page of the website. -->
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,28 +16,21 @@
     <title>Login</title>
   </head>
   <body>
-    <form
-      class="form"
-      method="post"
-      action="../PHP/Login/Login.php"
-      id="login-page-form"
-    >
+    <div id="x-pos">
+      <a href="../index.php" id="return">X</a>
+    </div>
+    <form class="form" method="post" action="../PHP/Login/Login.php" id="login-page-form">
       <div id="form-border">
         <h1>Login</h1>
         <div id="input">
-          <input
-            type="text"
-            name="username"
-            id="username"
-            placeholder="Username"
-          />
-          <input
-            type="password"
-            name="password"
-            id="password"
-            placeholder="Password"
-          />
+          <input type="text" name="username" id="username" placeholder="Username"/>
+          <input type="password" name="password" id="password" placeholder="Password"/>
         </div>
+        <?php
+          if (isset($_GET['error'])) {
+            echo "<div class='error'>" . htmlspecialchars($_GET['error']) . "</div>";
+          }
+        ?>
         <div id="buttons">
           <button type="submit" id="login-button">Login</button>
           <a href="./Register-Page.html">Register</a>

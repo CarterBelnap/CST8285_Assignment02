@@ -1,3 +1,9 @@
+<!-- 
+	Name: Ahmed Al-Zaher & Carter Belnap
+	File Name: index.php
+	Date: 08-04-2024
+	Purpose: HTML for the homepage of the website. -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,8 +21,14 @@
         <div class="navbar">
             <button><img src="./logoimg.jpg" onClick="window.location.reload();" alt="Joystick Logo" width="50px" height="50px"></button>
             <h1>JOYSTICK</h1>
-            <a class="links" href="./Pages/Register-Page.html">Register</a>
-            <a class="links" href="./Pages/Login-Page.html">Login</a>    
+            <a class="links" href="./Pages/Register-Page.php">Register</a>
+            <a class="links" href="./Pages/Login-Page.php">Login</a>   
+
+
+            <a class="links" href="./Pages/Profile.php">Profile</a> 
+            <a href="./Pages/Create-Idea-Page.html">Create Idea</a>
+
+
         </div>
     </header>
     <!-- Header for logged-in users -->

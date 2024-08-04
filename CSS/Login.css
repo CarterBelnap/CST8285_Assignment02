@@ -1,3 +1,9 @@
+/* 
+	Name: Ahmed Al-Zaher
+	File Name: Login.css
+	Date: 08-04-2024
+	Purpose: Css for the login page */
+
 .form {
   display: flex;
   margin: auto;
@@ -9,7 +15,7 @@
   display: flex;
   flex-direction: column;
   margin: auto;
-  margin-top: 15%;
+  margin-top: 10%;
   border: 1px solid #e08866c5;
   background-color: #3e2c46;
   border-radius: 30px;
@@ -49,11 +55,8 @@ input {
   align-items: center;
 }
 
-button {
-  width: 100px;
-  height: 100%;
+button, #return {
   border: 1px solid #8d7f7f;
-  border-radius: 3px;
   padding: 5px;
   margin-right: 5px;
   background-color: #14212a; /* Initial background color */
@@ -63,6 +66,29 @@ button {
   text-decoration: none;
   text-align: center;
 }
+button{
+  width: 100px;
+  height: 100%;
+  border-radius: 3px;
+}
 a {
   margin-top: 100px;
 }
+
+#return{
+  width: 25px;
+  height: 20px;
+  border-radius: 50pt;
+}
+
+#x-pos{
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  height: 50px;
+  width: 50px;
+  margin-left: 63%;
+  margin-top: 8%;
+  position: fixed;
+}
+

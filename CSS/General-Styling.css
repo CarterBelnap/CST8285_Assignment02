@@ -54,18 +54,12 @@ a:hover {
   margin-right: auto;
 }
 
-#signed-out {
-  display: none;
-}
-
-#signed-out.active {
-  display: block;
-}
-
 #signed-in {
-  display: none;
+  display: block;
 }
 
-#signed-in.active {
-  display: block;
+.error{
+  color: rgb(182, 2, 2);
+  font-size: 12pt;
+  margin-bottom: 5px;
 }
