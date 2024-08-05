@@ -78,6 +78,11 @@ button{
     position: fixed;
 }
 
+.error{
+    margin-top: -10px;
+    font-size: small;
+}
+
 @media only screen and (max-width: 800px) {
     h1{
         font-size: larger;

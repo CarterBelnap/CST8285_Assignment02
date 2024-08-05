@@ -22,10 +22,10 @@
         <div id="register_form">
             <h1>Register</h1>
             <div id="registration_input">
-                <input type="text" name="email" id="email" placeholder="E-mail">
-                <input type="text" name="username" id="username" placeholder="Username">
-                <input type="password" name="password" id="password" placeholder="Password">
-                <input type="password" name="password2" id="password2" placeholder="Confirm Password">
+                <div><input type="text" name="email" id="email" placeholder="E-mail"></div>
+                <div><input type="text" name="username" id="username" placeholder="Username"></div>
+                <div><input type="password" name="password" id="password" placeholder="Password"></div>
+                <div><input type="password" name="password2" id="password2" placeholder="Confirm Password"></div>
             </div>
             <?php
             if (isset($_GET['error'])) {
