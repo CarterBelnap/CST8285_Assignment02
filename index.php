@@ -17,19 +17,7 @@
 </head>
 <body>
     <?php include './PHP/Header/header.php'; ?>
-    <?php include 'C:\Users\carte\OneDrive\Documents\XAMPP Files\htdocs\CST8285_Assignment02\PHP\Config.php'; ?>
-    <?php
-        // Fetch genres from the database
-        $genres_query = "SELECT id, name FROM Genres"; // Adjust table and column names as needed
-        $genres_result = mysqli_query($connection, $genres_query);
-
-        $genres = [];
-        if (mysqli_num_rows($genres_result) > 0) {
-            while ($genre = mysqli_fetch_assoc($genres_result)) {
-                $genres[] = $genre;
-            }
-        }
-    ?>
+    <?php include './PHP/Config.php'; ?>
     <div class="container">
         <div class="side_box">            
             <div id="searchbar"> 
@@ -37,16 +25,12 @@
                 <form id="searchForm">
                     <input type="text" name="query" placeholder="Search..." id="searchInput">
                     <button type="submit" id="search-button">Search</button>
-                    <button type="reset" id="search-button">X</button>
+                    <a href="./index.php">X</a>
                 </form>
             </div>
             <div id="selectedGenres"> 
                 <p> Search by Genre...</p>
                 <form id="genre">
-                    <select name="genres[]" id="genres" multiple>
-                    </select>
-                    <button type="submit" id="search-button">Search</button>
-                    <button type="reset" id="search-button">X</button>
                 </form>
             </div>
         </div>

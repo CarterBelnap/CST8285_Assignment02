@@ -4,26 +4,13 @@ include 'C:\Users\carte\OneDrive\Documents\XAMPP Files\htdocs\CST8285_Assignment
 // Check if there is a search query
 $search_query = isset($_GET['query']) ? mysqli_real_escape_string($connection, $_GET['query']) : '';
 
-// Check if there are selected genres
-$selected_genres = isset($_GET['genres']) ? $_GET['genres'] : [];
-
 $query = "SELECT id, title, cover_image_url, user_id FROM GameIdeas WHERE 1=1";
 
 if ($search_query) {
     $query .= " AND title LIKE '%$search_query%'";
 }
 
-if (!empty($selected_genres)) {
-    $genres_placeholder = implode(',', array_fill(0, count($selected_genres), '?'));
-    $query .= " AND id IN ($genres_placeholder)";
-}
-
 $stmt = mysqli_prepare($connection, $query);
-
-if (!empty($selected_genres)) {
-    $types = str_repeat('i', count($selected_genres)); // assuming genre_id is an integer
-    mysqli_stmt_bind_param($stmt, $types, ...$selected_genres);
-}
 
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);

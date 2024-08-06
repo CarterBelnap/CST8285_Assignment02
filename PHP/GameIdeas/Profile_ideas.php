@@ -6,7 +6,6 @@
 -->
 <?php
 include '../PHP/config.php'; 
-session_start();
 
 if (!isset($_SESSION['user_id'])) {
     header("Location: ../../Pages/Login_Page.php");
