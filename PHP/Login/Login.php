@@ -4,7 +4,6 @@
 	Date: 08-04-2024
 	Purpose: PHP for the Login page of the website. -->
 
-
 <?php
 session_start();
 include '../config.php'; // Include the database configuration file

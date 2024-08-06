@@ -3,7 +3,7 @@
 $servername = "localhost"; // The server where your database is hosted
 $username = "root"; // default username 
 $password = ""; // default password
-$dbname = "crafting_play"; // database name
+$dbname = "assignment02"; // database name
 
 // Creates the connection
 $connection = new mysqli($servername, $username, $password, $dbname);

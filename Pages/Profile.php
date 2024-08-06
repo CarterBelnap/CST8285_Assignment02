@@ -14,17 +14,29 @@
     <title>Profile</title>
 </head>
 <body>
-    <header class="header" id="signed_in">
-        <div class="navbar">
-            <button><img src="../logoimg.jpg" href="../index.php" alt="Joystick Logo" width="50px" height="50px"></button>
-            <h1>JOYSTICK</h1>
-            <a href="./Create_Idea_Page.html">Create Idea</a>
-            <a href="./Profile.php">My Ideas</a>
-        </div>
-    </header>
+
+    <header class="header active" id="signed-in">
+            <div class="navbar">
+            <a href="../index.php"><img src="..\Images\logoimg.jpg" alt="Joystick Logo" width="50px" height="50px"></a>
+                <h1>JOYSTICK</h1>
+                <span class="username">
+                <?php
+                    // Check if a session is not already started
+                    if (session_status() == PHP_SESSION_NONE) {
+                        session_start(); // Start the session
+                    }
+                    if (isset($_SESSION['username'])) {
+                        echo htmlspecialchars($_SESSION['username']); // Echo the username
+                    }
+                ?>
+                </span>
+                <a href="../PHP/Login/Logout.php">Logout</a>
+                <a href="./Create_Idea_Page.html">Create Idea</a>
+            </div>
+        </header>
     <div class="idea_list">
         <h2>My Game Ideas</h2>
-        <?php include "../PHP/GameIdeas/Profile_ideas.php" ?>
+        <?php require "../PHP/GameIdeas/Profile_ideas.php" ?>
     </div>
 </body>
 </html>

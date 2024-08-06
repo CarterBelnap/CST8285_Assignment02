@@ -11,48 +11,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS\General_Styling.css">
     <link rel="stylesheet" href="CSS\index.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./JS/Search.js"></script>
     <title>Home Page</title>
 </head>
 <body>
-    <!-- Header for non-logged-in users -->
-    <header class="header" id="signed_out active" >
-        <div class="navbar">
-            <button><img src="./logoimg.jpg" href="./index.php" alt="Joystick Logo" width="50px" height="50px"></button>
-            <h1>JOYSTICK</h1>
-            <a class="links" href="./Pages/Register_Page.php">Register</a>
-            <a class="links" href="./Pages/Login_Page.php">Login</a>   
-
-
-            <a class="links" href="./Pages/Profile.php">Profile</a> 
-            <a href="./Pages/Create_Idea_Page.html">Create Idea</a>
-
-
-        </div>
-    </header>
-    <!-- Header for logged-in users -->
-    <header class="header" id="signed_in">
-        <div class="navbar">
-            <button><img src="./logoimg.jpg" href="./index.php" alt="Joystick Logo" width="50px" height="50px"></button>
-            <h1>JOYSTICK</h1>
-            <a href="./Pages/Create_Idea_Page.html">Create Idea</a>
-            <a href="./Pages/Profile.php">My Ideas</a>
-        </div>
-    </header>
+    <?php include './PHP/Header/header.php'; ?>
+    <?php include './PHP/Config.php'; ?>
     <div class="container">
-        <div class="side_box left_box"></div>
-        <div class="content">
+        <div class="side_box">            
             <div id="searchbar"> 
                 <p> Search for an idea...</p>   
-                <form action="search.php" method="GET">
-                    <input type="text" name="query" placeholder="Search...">
-                    <button type="submit" id="search_button">Search</button>
+                <form id="searchForm">
+                    <input type="text" name="query" placeholder="Search..." id="searchInput">
+                    <button type="submit" id="search-button">Search</button>
+                    <a href="./index.php">X</a>
                 </form>
             </div>
-            <div class="posts">
-                <form include="../PHP/GameIdeas/View_Idea.php">
+            <div id="selectedGenres"> 
+                <p> Search by Genre...</p>
+                <form id="genre">
                 </form>
             </div>
-        <div class="side_box right_box"></div>
+        </div>
+        <div class="content">
+            <div class="idea-list">
+                <form class="ideas">
+                    <div id="results">
+                        <?php include './PHP/GameIdeas/List_Ideas.php'; ?>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>

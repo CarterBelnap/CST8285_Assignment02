@@ -3,8 +3,8 @@
   min-height: 100vh;
 }
 
-.side_box  {
-  width: 10%;
+.side_box {
+  width: 30%;
   border: 1px solid #e08866c5;
   background-color: #3e2c46;
   border-radius: 15px;
@@ -12,14 +12,16 @@
 }
 
 .content {
-  width: 80%;
+  width: 70%;
+  height: auto;
   border: 1px solid #e08866c5;
   background-color: #3e2c46;
   border-radius: 15px;
   margin: 15px;
 }
 
-#searchbar {
+#searchbar,
+#selectedGenres {
   margin: 30px;
 }
 

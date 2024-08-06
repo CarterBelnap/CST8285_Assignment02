@@ -1,9 +1,19 @@
 <?php
-include 'config.php'; // Include the database configuration file
+include 'C:\Users\carte\OneDrive\Documents\XAMPP Files\htdocs\CST8285_Assignment02\PHP\Config.php'; // Include the database configuration file
 
-// Fetch all game ideas from the database
-$query = "SELECT id, title, cover_image_url, user_id FROM GameIdeas";
-$result = mysqli_query($connection, $query);
+// Check if there is a search query
+$search_query = isset($_GET['query']) ? mysqli_real_escape_string($connection, $_GET['query']) : '';
+
+$query = "SELECT id, title, cover_image_url, user_id FROM GameIdeas WHERE 1=1";
+
+if ($search_query) {
+    $query .= " AND title LIKE '%$search_query%'";
+}
+
+$stmt = mysqli_prepare($connection, $query);
+
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
 echo "<h2>All Game Ideas</h2>";
 
@@ -22,3 +32,4 @@ if (mysqli_num_rows($result) > 0) {
 }
 
 mysqli_close($connection);
+?>
