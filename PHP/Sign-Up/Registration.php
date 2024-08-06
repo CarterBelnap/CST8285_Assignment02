@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     // Execute the statement and check if the insertion was successful
     if ($createUser->execute()) {
-        header("Location: ../../Pages/Login_Page.html");
+        header("Location: ../../Pages/Login_Page.php");
     }
     else {
         echo "Error: " . $createUser->error;
