@@ -48,7 +48,7 @@ genreSelect.addEventListener("change", genreSelection);
 function addGenre(selectedGenre) {
   var selectedGenresDiv = document.getElementById("selectedGenres");
   var listedGenre = document.createElement("span");
-  listedGenre.className = "selected-genre";
+  listedGenre.className = "selected_genre";
   listedGenre.textContent = selectedGenre;
 
   // Add click event listener to the span to remove the genre

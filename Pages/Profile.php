@@ -9,22 +9,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/General-Styling.css" />
-    <link rel="stylesheet" href="../CSS/Idea-List.css">
+    <link rel="stylesheet" href="../CSS/General_Styling.css" />
+    <link rel="stylesheet" href="../CSS/Idea_List.css">
     <title>Profile</title>
 </head>
 <body>
-    <header class="header" id="signed-in">
-        <div class="navbar">
-            <button><img src="../logoimg.jpg" href="../index.php" alt="Joystick Logo" width="50px" height="50px"></button>
-            <h1>JOYSTICK</h1>
-            <a href="./Pages/Create-Idea-Page.html">Create Idea</a>
-            <a href="./Pages/Create-Idea-Page.html">My Ideas</a>
-        </div>
-    </header>
-    <div class="idea-list">
+    <?php include '../PHP/Header/header.php'; ?>
+    <div class="idea_list">
         <h2>My Game Ideas</h2>
-        <?php include "../PHP/GameIdeas/Profile-ideas.php" ?>
+        <?php include "../PHP/GameIdeas/Profile_ideas.php" ?>
     </div>
 </body>
 </html>

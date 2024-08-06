@@ -3,7 +3,7 @@
 	Date: 08-04-2024
 	Purpose: CSS styling for idea listing. Home page and profile page */
 
-.idea-list {
+.idea_list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -15,9 +15,10 @@
 }
 
 h2 {
-  position: fixed;
   margin-left: 10px;
   text-decoration: underline;
+  height: 30px;
+  width: 100%;
 }
 
 .ideas {
@@ -31,22 +32,23 @@ h2 {
   align-items: center;
 }
 
-.ideas h3 {
+.idea_title {
   text-align: center;
-  color: white;
   font-size: smaller;
-  margin-top: -5px;
+  margin-top: 5px;
   margin-bottom: 2px;
   text-decoration: underline;
+  color: white;
 }
 
 .ideas img {
   border-radius: 15px;
-  width: auto;
-  height: auto;
+  width: 300px;
+  height: 175px;
 }
 
-.ideas p {
+.view {
   text-align: center;
   font-size: small;
+  color: white;
 }

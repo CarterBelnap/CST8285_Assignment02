@@ -1,54 +1,34 @@
 <?php
+include 'C:\Users\carte\OneDrive\Documents\XAMPP Files\htdocs\CST8285_Assignment02\PHP\Config.php'; // Include the database configuration file
 
-include 'PHP/config.php'; // Use the correct absolute path
+// Check if there is a search query
+$search_query = isset($_GET['query']) ? mysqli_real_escape_string($connection, $_GET['query']) : '';
 
-// Retrieve the query and genres from the request
-$queryText = isset($_GET['query']) ? $_GET['query'] : '';
-$genres = isset($_GET['genres']) ? $_GET['genres'] : [];
+// Check if there are selected genres
+$selected_genres = isset($_GET['genres']) ? $_GET['genres'] : [];
 
-// Base SQL query
-$sql = "SELECT gi.id, gi.title, gi.cover_image_url 
-        FROM GameIdeas gi";
+$query = "SELECT id, title, cover_image_url, user_id FROM GameIdeas WHERE 1=1";
 
-// Array to hold SQL parameters
-$params = [];
-
-// Check if genres are selected
-if (!empty($genres)) {
-    // Join with GameIdeaGenres table and filter by genres
-    $placeholders = implode(',', array_fill(0, count($genres), '?'));
-    $sql .= " JOIN GameIdeaGenres gig ON gi.id = gig.game_idea_id 
-              WHERE gig.genre_id IN ($placeholders)";
-    $params = $genres;
-} else {
-    // No genres selected, no genre filtering
-    $sql .= " WHERE 1=1"; // Adjust this if you have other filters
+if ($search_query) {
+    $query .= " AND title LIKE '%$search_query%'";
 }
 
-// Check if there's a search query
-if (!empty($queryText)) {
-    // Add search query to the SQL
-    $sql .= " AND gi.title LIKE ?";
-    $params[] = "%$queryText%";
+if (!empty($selected_genres)) {
+    $genres_placeholder = implode(',', array_fill(0, count($selected_genres), '?'));
+    $query .= " AND id IN ($genres_placeholder)";
 }
 
-// Prepare and execute the query
-$stmt = mysqli_prepare($connection, $sql);
+$stmt = mysqli_prepare($connection, $query);
 
-// Bind parameters
-if (!empty($params)) {
-    // Bind parameters based on their type
-    $types = str_repeat('i', count($genres)); // Assuming genre_id is an integer
-    if (!empty($queryText)) {
-        $types .= 's'; // Adding type for the search query
-    }
-    mysqli_stmt_bind_param($stmt, $types, ...$params);
+if (!empty($selected_genres)) {
+    $types = str_repeat('i', count($selected_genres)); // assuming genre_id is an integer
+    mysqli_stmt_bind_param($stmt, $types, ...$selected_genres);
 }
 
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
-echo "<h2>Filtered Game Ideas</h2>";
+echo "<h2>All Game Ideas</h2>";
 
 if (mysqli_num_rows($result) > 0) {
     echo "<ul>";
@@ -61,7 +41,7 @@ if (mysqli_num_rows($result) > 0) {
     }
     echo "</ul>";
 } else {
-    echo "<p>No game ideas found for the selected filters.</p>";
+    echo "<p>No game ideas found.</p>";
 }
 
 mysqli_close($connection);

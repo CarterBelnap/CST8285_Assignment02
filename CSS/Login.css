@@ -11,7 +11,7 @@
   font-size: 16pt;
 }
 
-#form-border {
+#form_border {
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -81,7 +81,7 @@ a {
   border-radius: 50pt;
 }
 
-#x-pos{
+#x_pos{
   display: flex;
   align-items: flex-end;
   flex-wrap: nowrap;

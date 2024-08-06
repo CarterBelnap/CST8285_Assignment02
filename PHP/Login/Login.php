@@ -4,7 +4,6 @@
 	Date: 08-04-2024
 	Purpose: PHP for the Login page of the website. -->
 
-
 <?php
 session_start();
 include '../config.php'; // Include the database configuration file
@@ -33,11 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: ../../index.php");
         } else {
             $errorMessage = "Incorrect password. Please try again.";
-            header("Location: ../../Pages/Login-Page.php?error=" . urlencode($errorMessage));
+            header("Location: ../../Pages/Login_Page.php?error=" . urlencode($errorMessage));
         }
     } else {
         $errorMessage = "No user found with that username.";
-        header("Location: ../../Pages/Login-Page.php?error=" . urlencode($errorMessage));
+        header("Location: ../../Pages/Login_Page.php?error=" . urlencode($errorMessage));
     }
 
     // Close the statement and connection

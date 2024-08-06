@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../CSS/General_Styling.css" />
+    <link rel="stylesheet" href="../CSS/Create_Idea.css" />
+    <script defer src="../JS/Genres.js"></script>
+    <script defer src="../JS/Add_Section.js"></script>
+    <script defer src="../JS/Idea_validation.js"></script>
+    <title>Create Idea</title>
+</head>
+<body>
+    <form method="post" action="../PHP/GameIdeas/Submit_Idea.php">
+        <div id="idea_form">
+            <h1>Create Idea</h1>
+            <div id="idea_top">
+                <input type="text" name="title" id="idea_title" placeholder="Title">
+                <select name="genres[]" id="genres"></select>
+                <div id="selectedGenres"></div>
+                <input type="text" name="cover_image_url" id="cover_image_url" placeholder="Cover Image URL">
+            </div>
+            <div name="sections" id="sections">
+                <div id="mandatory_section" class="idea_section">
+                    <input type="text" name="section_titles[]" class="section_title" placeholder="Section Title">
+                    <textarea name="section_texts[]" class="section_body"></textarea>
+                    <input type="text" name="section_urls[]" class="section_url" placeholder="image URL (Optional)">
+                </div>
+            </div>
+            <button type="button" id="add_section">+</button>
+            <div id="form_buttons">
+                <button type="submit" id="post_form">Post</button>
+                <button type="reset" id="cancel_form">Cancel</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

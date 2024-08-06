@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $connection->close();
         
         //redirect to the registration page while including the error message
-        header("Location: ../../Pages/Register-Page.php?error=" . urlencode($errorMessage));
+        header("Location: ../../Pages/Register_Page.php?error=" . urlencode($errorMessage));
         exit();
     }
     $checkDuplicate->close();
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
     // Execute the statement and check if the insertion was successful
     if ($createUser->execute()) {
-        header("Location: ../../Pages/Login-Page.html");
+        header("Location: ../../Pages/Login_Page.php");
     }
     else {
         echo "Error: " . $createUser->error;

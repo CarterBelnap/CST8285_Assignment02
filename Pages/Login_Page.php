@@ -10,17 +10,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../CSS/General-Styling.css" />
+    <link rel="stylesheet" href="../CSS/General_Styling.css" />
     <link rel="stylesheet" href="../CSS/Login.css" />
     <script defer src="../JS/Login.js"></script>
     <title>Login</title>
   </head>
   <body>
-    <div id="x-pos">
+    <div id="x_pos">
       <a href="../index.php" id="return">X</a>
     </div>
-    <form class="form" method="post" action="../PHP/Login/Login.php" id="login-page-form">
-      <div id="form-border">
+    <form class="form" method="post" action="../PHP/Login/Login.php" id="login_page_form">
+      <div id="form_border">
         <h1>Login</h1>
         <div id="input">
           <input type="text" name="username" id="username" placeholder="Username"/>
@@ -32,8 +32,8 @@
           }
         ?>
         <div id="buttons">
-          <button type="submit" id="login-button">Login</button>
-          <a href="./Register-Page.html">Register</a>
+          <button type="submit" id="login_button">Login</button>
+          <a href="./Register_Page.php">Register</a>
         </div>
       </div>
     </form>
