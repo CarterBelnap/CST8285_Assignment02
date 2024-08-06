@@ -27,11 +27,6 @@
                 <div><input type="password" name="password" id="password" placeholder="Password"></div>
                 <div><input type="password" name="password2" id="password2" placeholder="Confirm Password"></div>
             </div>
-            <?php
-            if (isset($_GET['error'])) {
-                echo "<div class='error'>" . htmlspecialchars($_GET['error']) . "</div>";
-            }
-            ?>
             <div id="register_buttons">
                 <button type="submit" id="register_button">Register</button>
                 <button type="reset" id="reset_button">Cancel</button>
