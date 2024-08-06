@@ -44,11 +44,6 @@
                 <p> Search by Genre...</p>
                 <form id="genre">
                     <select name="genres[]" id="genres" multiple>
-                        <?php foreach ($genres as $genre): ?>
-                            <option value="<?php echo htmlspecialchars($genre['id']); ?>">
-                                <?php echo htmlspecialchars($genre['name']); ?>
-                            </option>
-                        <?php endforeach; ?>
                     </select>
                     <button type="submit" id="search-button">Search</button>
                     <button type="reset" id="search-button">X</button>

@@ -112,7 +112,7 @@ button:hover{
     background-color: #1f3a47;
 }
 
-#post_form, #cancel_form{
+#post_form, #clear_form, #cancel_form{
     border: 1px solid #8d7f7f;
 	border-radius: 3px;
 	padding: 5px;
