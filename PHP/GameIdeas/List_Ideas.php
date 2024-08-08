@@ -1,5 +1,5 @@
 <?php
-include 'C:\Users\carte\OneDrive\Documents\XAMPP Files\htdocs\CST8285_Assignment02\PHP\Config.php'; // Include the database configuration file
+include './PHP/Config.php'; // Include the database configuration file
 
 // Check if there is a search query
 $search_query = isset($_GET['query']) ? mysqli_real_escape_string($connection, $_GET['query']) : '';
@@ -15,18 +15,17 @@ $stmt = mysqli_prepare($connection, $query);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
-echo "<h2>All Game Ideas</h2>";
-
 if (mysqli_num_rows($result) > 0) {
-    echo "<ul>";
     while ($row = mysqli_fetch_assoc($result)) {
-        echo "<li>";
+        echo "<div class='ideas'>";
         echo "<h3>" . htmlspecialchars($row['title']) . "</h3>";
         echo "<img src='" . htmlspecialchars($row['cover_image_url']) . "' alt='" . htmlspecialchars($row['title']) . "' width='100'>";
-        echo "<p><a href='view_idea.php?id=" . $row['id'] . "'>View Details</a></p>";
-        echo "</li>";
+        echo "<form method='GET' action='./Edit_Idea_Page.php'>";
+        echo "<input type='hidden' name='id' value='" . htmlspecialchars($row['id']) . "'>";
+        echo "<button type='submit' class='view'>View</button>";
+        echo "</form>";
+        echo "</div>";
     }
-    echo "</ul>";
 } else {
     echo "<p>No game ideas found.</p>";
 }

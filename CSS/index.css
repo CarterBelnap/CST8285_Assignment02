@@ -11,15 +11,6 @@
   margin: 15px;
 }
 
-.content {
-  width: 70%;
-  height: auto;
-  border: 1px solid #e08866c5;
-  background-color: #3e2c46;
-  border-radius: 15px;
-  margin: 15px;
-}
-
 #searchbar,
 #selectedGenres {
   margin: 30px;
@@ -44,4 +35,13 @@
 
 #search_button:hover {
   text-decoration: underline;
+}
+
+.content {
+  width: 70%;
+  height: auto;
+  border: 1px solid #e08866c5;
+  background-color: #3e2c46;
+  border-radius: 15px;
+  margin: 15px;
 }

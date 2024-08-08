@@ -87,6 +87,9 @@ input {
     height: 200px;
     border-radius: 20px;
     margin-bottom: 5px;
+	border: 1.5px solid #e08866;
+ 	background-color: #2c1f31;
+ 	color: #e08866;
 }
 
 .section_url{
