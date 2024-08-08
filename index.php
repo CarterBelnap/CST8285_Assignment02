@@ -36,11 +36,9 @@
         </div>
         <div class="content">
             <div class="idea-list">
-                <form class="ideas">
-                    <div id="results">
+                    <div class=idealists id="results">
                         <?php include './PHP/GameIdeas/List_Ideas.php'; ?>
                     </div>
-                </form>
             </div>
         </div>
     </div>

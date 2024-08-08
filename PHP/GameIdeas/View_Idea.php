@@ -1,46 +1,72 @@
 <?php
-include 'config.php'; // Include the database configuration file
+// Include your database connection file
+require '../config.php';
 
-// Retrieve the game idea ID from the query parameter
+// Check if the 'id' parameter is set in the URL
 if (isset($_GET['id'])) {
-    $gameIdeaId = $_GET['id'];
+    // Sanitize the input to prevent SQL injection
+    $id = mysqli_real_escape_string($conn, $_GET['id']);
 
-    // Fetch game idea details
-    $query = "SELECT title, cover_image_url FROM GameIdeas WHERE id=$gameIdeaId";
-    $result = mysqli_query($connection, $query);
+    // Query the database for the specific ID
+    $sql = "SELECT 
+                gameideas.title,
+                gameideas.coverimage,
+                sections.sectiontitle,
+                sections.sectiontext
+            FROM 
+                gameideas
+            JOIN 
+                sections ON gameideas.id = sections.game_idea_id
+            WHERE 
+                gameideas.id = '$id'";
+    
+    // Execute the SQL query
+    $result = mysqli_query($conn, $sql);
+    
+    if (mysqli_num_rows($result) > 0) {
+        // Fetch the data as an associative array
+        $row = mysqli_fetch_assoc($result);
 
-    if ($gameIdea = mysqli_fetch_assoc($result)) {
-        echo "<h2>" . htmlspecialchars($gameIdea['title']) . "</h2>";
-        echo "<img src='" . htmlspecialchars($gameIdea['cover_image_url']) . "' alt='" . htmlspecialchars($gameIdea['title']) . "' width='200'>";
-        
-        // Fetch sections
-        $query = "SELECT section_content FROM Sections WHERE game_idea_id=$gameIdeaId";
-        $sectionsResult = mysqli_query($connection, $query);
-        echo "<h3>Sections</h3>";
-        echo "<div>";
-        while ($section = mysqli_fetch_assoc($sectionsResult)) {
-            echo "<p>" . nl2br(htmlspecialchars($section['section_content'])) . "</p>";
-        }
-        echo "</div>";
+        // Assign the fetched data to variables
+        $title = htmlspecialchars($row['title']);
+        $coverimage = htmlspecialchars($row['coverimage']);
+        $sectitle = htmlspecialchars($row['sectiontitle']);
+        $sectext = htmlspecialchars($row['sectiontext']);
 
-        // Fetch comments
-        $query = "SELECT comment_text, created_at FROM Comments WHERE game_idea_id=$gameIdeaId ORDER BY created_at DESC";
-        $commentsResult = mysqli_query($connection, $query);
-        echo "<h3>Comments</h3>";
-        if (mysqli_num_rows($commentsResult) > 0) {
-            echo "<ul>";
-            while ($comment = mysqli_fetch_assoc($commentsResult)) {
-                echo "<li>" . htmlspecialchars($comment['comment_text']) . " - <em>Posted on " . $comment['created_at'] . "</em></li>";
-            }
-            echo "</ul>";
-        } else {
-            echo "<p>No comments yet.</p>";
-        }
     } else {
-        echo "<p>Game idea not found.</p>";
+        echo "<p>No details found for this idea.</p>";
+        exit;
     }
-
-    mysqli_close($connection);
 } else {
-    echo "<p>Invalid game idea ID.</p>";
+    echo "<p>Invalid request. No ID specified.</p>";
+    exit;
 }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Idea Details</title>
+    <link rel="stylesheet" href="css/styles1.css"> <!-- Link to your CSS file for styling -->
+</head>
+<body>
+
+    <div class="content">
+        <div class="game-idea">
+            <h1 class="game-idea__title"><?php echo $title; ?></h1> <!-- Display the game idea title -->
+
+            <div class="game-idea__image">
+                <img src="<?php echo $coverimage; ?>" alt="Cover Image" width="300"> <!-- Display the cover image -->
+            </div>
+
+            <div class="game-idea__section">
+                <h2 class="game-idea__section-title"><?php echo $sectitle; ?></h2> <!-- Display the section title -->
+                <p class="game-idea__section-text"><?php echo $sectext; ?></p> <!-- Display the section text -->
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
