@@ -1,3 +1,9 @@
+/* Name: Ahmed Al-Zaher
+	File Name: Genres.js
+	Date: 08-04-2024
+	Purpose: Creates an array of genres and populates the options with the. */
+
+  // genre array
 var genres = [
   "Action",
   "Adventure",

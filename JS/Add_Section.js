@@ -1,3 +1,9 @@
+/* Name: Ahmed Al-Zaher
+	File Name: Add_Section.css
+	Date: 08-04-2024
+	Purpose: Allows users to add and remove sections to their game ideas while making sure that
+                at least one section exists. */
+
 var addButton = document.getElementById("add_section");
 addButton.addEventListener('click', addSection);
 

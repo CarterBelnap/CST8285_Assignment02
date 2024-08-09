@@ -1,3 +1,8 @@
+    <!-- Name: Ahmed Al-Zaher
+	File Name: Submit_Edit.php
+	Date: 08-04-2024
+	Purpose: Submits an Idea to the database 
+                used prepared statements to protect against sql injections as an extra layer of security-->
 <?php
 session_start();
 include '../config.php';
