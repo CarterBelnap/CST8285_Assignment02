@@ -34,9 +34,12 @@
                 <a href="./Create_Idea_Page.html">Create Idea</a>
             </div>
         </header>
-    <div class="idea_list">
-        <h2>My Game Ideas</h2>
-        <?php require "../PHP/GameIdeas/Profile_ideas.php" ?>
+    <div class="my_ideas_panel">
+        <div class="idea_list">
+            <h2>My Game Ideas</h2>
+            <?php require "../PHP/GameIdeas/Profile_ideas.php" ?>
+        </div>
     </div>
+    
 </body>
 </html>
