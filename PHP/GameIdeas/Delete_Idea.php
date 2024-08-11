@@ -1,3 +1,9 @@
+    <!-- Name: Ahmed Al-Zaher
+	File Name: Delete_Idea.php
+	Date: 08-04-2024
+	Purpose: PHP script to delete an idea from the backend database
+                used prepared statements to protect against sql injections as an extra layer of security  -->
+
 <?php
 session_start();
 include '../config.php';
@@ -8,6 +14,7 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+//check that form method is post
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $ideaId = $_POST['idea_id'];
     $userId = $_SESSION['user_id'];
@@ -18,11 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ii", $ideaId, $userId);
     $stmt->execute();
     $result = $stmt->get_result();
-
-    if ($result->num_rows == 0) {
-        echo "Idea not found or you do not have permission to delete this idea.";
-        exit();
-    }
 
     // Delete dependent rows in SectionImages
     $deleteImagesQuery = "DELETE FROM SectionImages WHERE section_id IN (SELECT id FROM Sections WHERE game_idea_id = ?)";

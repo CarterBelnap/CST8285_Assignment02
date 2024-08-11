@@ -1,3 +1,9 @@
+    <!-- Name: Ahmed Al-Zaher
+	File Name: Ger_Editable.php
+	Date: 08-04-2024
+	Purpose: When an idea is selected from the profile by a logged in user, A form is created and is populated by the information 
+                that exists within the idea. -->
+
 <?php
 session_start();
 include '../PHP/config.php';
@@ -18,16 +24,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['id'])) {
     $stmt->bind_param("ii", $ideaId, $userId);
     $stmt->execute();
     $result = $stmt->get_result();
-
-    if (!$result) {
-        echo "Error executing query: " . $stmt->error;
-        exit();
-    }
-
-    if ($result->num_rows == 0) {
-        echo "<b>Warning</b>: Idea not found or you do not have permission to edit this idea.";
-        exit();
-    }
 
     $idea = $result->fetch_assoc();
 

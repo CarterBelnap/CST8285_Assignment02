@@ -1,9 +1,8 @@
-<!-- 
-    Name: Ahmed Al-Zaher
-    File Name: Profile-ideas.php
-    Date: 08-04-2024
-    Purpose: PHP to list the ideas made by a specific user in their profile 
--->
+    <!-- Name: Ahmed Al-Zaher
+	File Name: Ger_Editable.php
+	Date: 08-04-2024
+	Purpose: PHP script to populate profile page with ideas that the user created 
+                used prepared statements to protect against sql injections as an extra layer of security -->
 <?php
 include '../PHP/config.php'; 
 
