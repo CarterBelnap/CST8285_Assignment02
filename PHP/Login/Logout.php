@@ -14,4 +14,3 @@ if (isset($_SESSION['user_id'])) {
 // Redirect to the homepage or login page after logout
 header('Location: ../../index.php'); // Adjust the path as necessary to point to your homepage or login page
 exit;
-?>

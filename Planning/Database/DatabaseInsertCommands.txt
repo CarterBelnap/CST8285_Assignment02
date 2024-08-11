@@ -1,0 +1,58 @@
+INSERT INTO assignment02.users (username, password, email, registration_date)
+VALUES
+('john_doe', 'tioF7ew3q', 'john.doe@example.com', '2024-07-29 12:00:00'),
+('janesmith', 'janejane01', 'jane.smith@example.com', '2024-07-29 12:30:00');
+
+INSERT INTO assignment02.genres (name)
+VALUES
+('Action'),
+('Adventure'),
+('Horror'),
+('Puzzle'),
+('2D'),
+('3D'),
+('Platformer'),
+('Roguelike'),
+('RPG'),
+('Simulation'),
+('Comedy'),
+('Rhythm'),
+('Multiplayer'),
+('Shooter'),
+('Card'),
+('Board'),
+('Party');
+
+INSERT INTO assignment02.gameideas (user_id, title, cover_image_url, post_date)
+VALUES
+(1, 'Epic Adventure Quest', 'https://www.91-cdn.com/hub/wp-content/uploads/2021/12/ar88u.jpg', '2024-07-29 13:00:00'),
+(2, 'Magic Mystery', 'https://lumiere-a.akamaihd.net/v1/images/star-wars-outlaws-key-art_article-feature_73a536a1.jpeg?region=0,0,1600,900', '2024-07-29 13:30:00');
+
+INSERT INTO assignment02.sections (game_idea_id, section_title, section_text)
+VALUES
+(1, 'Narrative', 'In a world filled with magic and mythical creatures, players embark on a journey that will take them through enchanted forests and mysterious dungeons.'),
+(1, 'Mechanics', 'Players can explore open-world environments, engage in tactical combat, and interact with diverse characters to influence the story’s outcome.'),
+(2, 'Narrative', 'A thrilling quest where players must unravel mysteries and face challenges in a dystopian landscape filled with ancient secrets and futuristic technology.'),
+(2, 'Mechanics', 'The game features intricate puzzle-solving mechanics that require players to use logic, spatial reasoning, and team coordination to advance.');
+
+INSERT INTO assignment02.sectionimages (section_id, image_url)
+VALUES
+(1, 'https://media.cnn.com/api/v1/images/stellar/prod/221104124617-god-of-war-ragnarok-review-cnnu-11.jpg?c=16x9&q=h_720,w_1280,c_fill'),
+(2, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQV5cxA6CdWw5XYVwmsjt6lAh_WDhXAv90xwQ&s'),
+(3, 'https://cdn.vox-cdn.com/thumbor/XMxWJJuSidYpk3jvpifZyxs6z58=/0x38:1920x1043/fit-in/1200x630/cdn.vox-cdn.com/uploads/chorus_asset/file/19355555/jbareham_191158_ply0958_decade_minecraft.jpg'),
+(4, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfbD9mLA2odcL0AUugmvwvQLxYRKu0sUiUzg&s');
+
+INSERT INTO assignment02.comments (game_idea_id, user_id, comment_text, comment_date)
+VALUES
+(1, 2, 'This game idea sounds amazing! I love the concept and cant wait to see it developed further.', '2024-07-29 14:00:00'),
+(2, 1, 'This game seems challenging. Cant wait to try it out and see how it tests my skills!', '2024-07-29 14:30:00');
+
+
+INSERT INTO assignment02.gameideagenres (game_idea_id, genre_id)
+VALUES
+(1, 3),  -- Linking 'Epic Adventure Quest' to 'Adventure'
+(1, 5),  -- Linking 'Epic Adventure Quest' to 'Puzzle'
+(2, 4),  -- Linking 'Magic Mystery' to 'Horror'
+(2, 10); -- Linking 'Magic Mystery' to 'RPG'
+
+

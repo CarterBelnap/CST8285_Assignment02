@@ -1,3 +1,10 @@
+<!--
+	Name: Carter Belnap
+	File Name: header.php
+	Date: 08-04-2024
+	Purpose: displays two different header, depending on if the user is logged in or not
+-->
+
 
 <?php
 include 'PHP\Config.php';

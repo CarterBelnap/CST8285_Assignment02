@@ -1,16 +1,9 @@
-function viewDetails(gameIdeaId) {
-  $.ajax({
-    url: "/CST8285_Assignment02/PHP/GameIdeas/View_Idea.php",
-    type: "GET",
-    data: { id: gameIdeaId },
-    success: function (response) {
-      $("results").html(response);
-    },
-    error: function () {
-      alert("Error loading details.");
-    },
-  });
-}
+/*
+	Name: Carter Belnap
+	File Name: Ideas.js
+	Date: 08-04-2024
+	Purpose: AJAX scripts in order to load and list ideas on the main page
+*/
 
 function loadAllIdeas() {
   $.ajax({
